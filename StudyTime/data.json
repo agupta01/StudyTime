@@ -1,0 +1,31 @@
+{
+"users": [
+  {"userId": 1, "name": "Arunav Gupta", "balance": 5},
+  {"userId": 2, "name": "Alex Mak", "balance": 5},
+  {"userId": 3, "name": "Shirley Qi", "balance": 5},
+  {"userId": 4, "name": "Rohan Sreedhar", "balance": 5}
+],
+
+"history": [
+  {"userId": 1,
+    "dates": ["10/1", "11/1", "11/2", "11/4"],
+    "times": ["60", "34", "30", "45"],
+    "transactions": ["0", "1", "0", "0.50"]
+  },
+  {"userId": 2,
+    "dates": ["10/4", "11/1", "11/2", "11/4"],
+    "times": ["60", "38", "44", "23"],
+    "transactions": ["0", "1", "0.50", "1"]
+  },
+  {"userId": 3,
+    "dates": ["10/1", "11/13", "11/24", "11/26"],
+    "times": ["120", "5", "90", "35"],
+    "transactions": ["0", "1", "0", "0.50"]
+  },
+  {"userId": 4,
+    "dates": ["10/1", "11/1", "11/2", "11/4"],
+    "times": ["78", "38", "45", "23"],
+    "transactions": ["1", "1", "0", "0.50"] 
+  }
+]
+}

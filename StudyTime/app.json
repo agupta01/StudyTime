@@ -1,30 +1,17 @@
 {
+  "name": "StudyTime",
+  "displayName": "StudyTime",
   "expo": {
     "name": "StudyTime",
-    "slug": "StudyTime",
-    "privacy": "public",
+    "slug": "expo-template-bare",
+    "privacy": "unlisted",
     "sdkVersion": "35.0.0",
+    "version": "1.0.0",
+    "entryPoint": "node_modules/expo/AppEntry.js",
     "platforms": [
       "ios",
       "android",
       "web"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    }
+    ]
   }
 }
