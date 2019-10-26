@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, StatusBar } from 'react-native';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack'
 
@@ -8,6 +8,7 @@ import AppNavigator from './navigation/AppNavigator';
 import TimerScreen from './screens/TimerScreen';
 import HistoryScreen from './screens/HistoryScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import MainTabNavigator from './navigation/MainTabNavigator';
 
 // export default class App extends Component {
 //   render() {
@@ -41,10 +42,25 @@ const SettingsStack = createStackNavigator(
   config
 );
 
+// SettingsStack.navigationOptions = {
+//   tabBarLabel: 'Settings',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+//   ),
+// };
+
+SettingsStack.path = '';
+
 const TabNavigator = createBottomTabNavigator({
   Timer: TimerScreen,
   Log: HistoryScreen,
   Settings: SettingsScreen
 });
 
-export default createAppContainer(TabNavigator);
+TabNavigator.path = '';
+
+//export default createAppContainer(TabNavigator);
+
+export default createAppContainer(
+  createSwitchNavigator({Main: MainTabNavigator,})
+);
