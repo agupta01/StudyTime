@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { InfoTable } from './InfoTable'
+import InfoTable from './InfoTable'
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
 const instructions = Platform.select({
@@ -14,7 +14,7 @@ export default class App extends Component {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <InfoTable userId={1} />
+        <InfoTable userId={"1"}/>
       </View>
     );
   }
