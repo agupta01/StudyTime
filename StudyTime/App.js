@@ -1,40 +1,50 @@
 import React, { Component } from 'react';
-import InfoTable from './InfoTable'
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, StatusBar } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createStackNavigator } from 'react-navigation-stack'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
+import AppNavigator from './navigation/AppNavigator';
+import TimerScreen from './screens/TimerScreen';
+import HistoryScreen from './screens/HistoryScreen';
+import SettingsScreen from './screens/SettingsScreen';
+
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+//         <AppNavigator/>
+//       </View>
+//     );
+//   }
+// }
+//
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#F5FCFF',
+//   }
+// });
+
+const config = Platform.select({
+  web: { headerMode: 'screen' },
+  default: {},
 });
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <InfoTable userId={"1"}/>
-      </View>
-    );
-  }
-}
+const SettingsStack = createStackNavigator(
+  {
+    Settings: SettingsScreen,
+  },
+  config
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+const TabNavigator = createBottomTabNavigator({
+  Timer: TimerScreen,
+  Log: HistoryScreen,
+  Settings: SettingsScreen
 });
+
+export default createAppContainer(TabNavigator);
