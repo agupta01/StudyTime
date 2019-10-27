@@ -35,7 +35,8 @@ export default class TimerActual extends Component{
       appState: AppState.currentState,
       //balanceInitial: userData.users[0].balance,
       balanceDeducted: 1,
-      timePassed: 0,
+      //timePassed: 0,
+    //  refreshing: false,
 // screenVisible: true
     };
     //props.nameHere
@@ -46,6 +47,7 @@ export default class TimerActual extends Component{
     this.resetTimer = this.resetTimer.bind(this);
     this.startStopStopWatch = this.startStopStopWatch.bind(this);
     this.resetStopwatch = this.resetStopwatch.bind(this);
+    //this._onRefresh = this._onRefresh.bind(this);
   }
 
   componentDidMount() {
@@ -62,6 +64,13 @@ export default class TimerActual extends Component{
     }
     this.setState({appState: nextAppState});
   };
+
+  /*_onRefresh() {
+    this.setState({refreshing: true});
+    fetchData().then(() => {
+      this.setState({refreshing: false});
+    });
+  }*/
 
   setPickerValue(newValue) {
 
@@ -225,14 +234,19 @@ export default class TimerActual extends Component{
    ]
 
     return (
+
       <View>
-      <View style={wrapperStyles.container}>
+
+
+        <View style ={wrapperStyles.container}>
+
         <View style={{
             flex: 1,
             marginTop: 32,
             alignItems: 'center',
             justifyContent: 'center',
           }}>
+
           <Timer
             totalDuration={this.state.timerDuration} secs
             start={this.state.isTimerStart}
@@ -287,6 +301,7 @@ export default class TimerActual extends Component{
         </View>
       </Modal>
       </View>
+
     );
   }
 }

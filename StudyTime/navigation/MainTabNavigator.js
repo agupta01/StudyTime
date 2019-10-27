@@ -25,11 +25,7 @@ TimeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-timer${focused ? '' : '-outline'}`
-          : 'md-timer'
-      }
+      name={Platform.OS === 'ios' ? 'ios-timer' : 'md-link'}
     />
   ),
 };
