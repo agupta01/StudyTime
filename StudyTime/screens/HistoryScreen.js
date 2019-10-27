@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, ActivityIndicator, FlatList } from 'react-native';
+import { Platform, StyleSheet, Text, View, ActivityIndicator, FlatList, ScrollView } from 'react-native';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component'; //this is an external folder, need to download it
 
 var userData = require('../data.json');
@@ -20,10 +20,12 @@ export default class HistoryScreen extends Component {
     const state = this.state;
 
     return (
+      <ScrollView>
         <Table borderStyle={{borderWidth: 2, borderColor: '#0000'}}>
           <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
           <Rows data={state.tableData} textStyle={styles.text}/>
         </Table>
+      </ScrollView>
     );
   }
 
