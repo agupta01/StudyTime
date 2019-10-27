@@ -27,8 +27,8 @@ TimeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-timer${focused ? '' : '-outline'}`
+          : 'md-timer'
       }
     />
   ),
@@ -46,7 +46,7 @@ const HistoryStack = createStackNavigator(
 HistoryStack.navigationOptions = {
   tabBarLabel: 'History',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-paper' : 'md-link'} />
   ),
 };
 
@@ -62,7 +62,7 @@ const SettingsStack = createStackNavigator(
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Settings',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-settings' : 'md-options'} />
   ),
 };
 
